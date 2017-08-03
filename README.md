@@ -1,5 +1,5 @@
-## LSettingView
-
+## SettingView
+项目参考自LSettingView
 设置界面条目封装，同时包含：
 
  - 设置左侧图标
@@ -34,7 +34,7 @@
     
 #### 2. 在布局文件中引用
 
-    <com.app.lib.settingview.LSettingItem
+    <com.czm.settingview.SettingItem
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/item_one"
         android:layout_width="match_parent"
@@ -45,8 +45,8 @@
 #### 3. 添加单击事件处理
 
 
-    LSettingItem mSettingItemOne = (LSettingItem) findViewById(R.id.item_one);
-    mSettingItemOne.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
+    SettingItem mSettingItemOne = (SettingItem) findViewById(R.id.item_one);
+    mSettingItemOne.setmOnLSettingItemClick(new SettingItem.OnLSettingItemClick() {
                 @Override
                 public void click(boolean isChecked) {
                     Toast.makeText(getApplicationContext(), "我的消息", Toast.LENGTH_SHORT).show();
@@ -82,6 +82,3 @@
  - iconHide   隐藏图标
  - iconCheck  显示复选框
  - iconSwitch 显示切换开关
-
-----------
-如果本库对你有用，欢迎star或者fork! 欢迎访问 [博客](https://apphua.github.io/) 查看更多文章。
