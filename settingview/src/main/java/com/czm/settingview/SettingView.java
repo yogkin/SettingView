@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
-public class SettingItem extends RelativeLayout {
+public class SettingView extends RelativeLayout {
     /*左侧显示文本*/
     private String mLeftText;
     /*左侧图标*/
@@ -71,15 +71,15 @@ public class SettingItem extends RelativeLayout {
     private static final int RIGHT_TEXT_SIZE = 20;
 
 
-    public SettingItem(Context context) {
+    public SettingView(Context context) {
         this(context, null);
     }
 
-    public SettingItem(Context context, AttributeSet attrs) {
+    public SettingView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SettingItem(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SettingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(context);
         getCustomStyle(context, attrs);
@@ -110,65 +110,65 @@ public class SettingItem extends RelativeLayout {
      * @param attrs
      */
     public void getCustomStyle(Context context, AttributeSet attrs) {
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LSettingView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SettingView);
         int n = a.getIndexCount();
         for (int i = 0; i < n; i++) {
             int attr = a.getIndex(i);
-            if (attr == R.styleable.LSettingView_leftText) {
+            if (attr == R.styleable.SettingView_leftText) {
                 mLeftText = a.getString(attr);
                 mTvLeftText.setText(mLeftText);
-            } else if (attr == R.styleable.LSettingView_leftIcon) {
+            } else if (attr == R.styleable.SettingView_leftIcon) {
                 // 左侧图标
                 mLeftIcon = a.getDrawable(attr);
                 if (mLeftIcon!=null) {
                     mIvLeftIcon.setVisibility(VISIBLE);
                     mIvLeftIcon.setImageDrawable(mLeftIcon);
                 }
-            } else if (attr == R.styleable.LSettingView_leftIconSize) {
+            } else if (attr == R.styleable.SettingView_leftIconSize) {
 
                 mLeftIconSzie = (int) a.getDimension(attr, LEFT_CION_SIZE);
                 RelativeLayout.LayoutParams layoutParams = (LayoutParams) mIvLeftIcon.getLayoutParams();
                 layoutParams.width = mLeftIconSzie;
                 layoutParams.height = mLeftIconSzie;
                 mIvLeftIcon.setLayoutParams(layoutParams);
-            } else if (attr == R.styleable.LSettingView_leftTextMarginLeft) {
+            } else if (attr == R.styleable.SettingView_leftTextMarginLeft) {
 
                 int leftMargin = (int) a.getDimension(attr, MARGIN_LEFT);
                 RelativeLayout.LayoutParams layoutParams = (LayoutParams) mTvLeftText.getLayoutParams();
                 layoutParams.leftMargin = leftMargin;
                 mTvLeftText.setLayoutParams(layoutParams);
-            } else if (attr == R.styleable.LSettingView_rightIcon) {
+            } else if (attr == R.styleable.SettingView_rightIcon) {
                 // 右侧图标
                 mRightIcon = a.getDrawable(attr);
                 mIvRightIcon.setImageDrawable(mRightIcon);
-            } else if (attr == R.styleable.LSettingView_textSize) {
+            } else if (attr == R.styleable.SettingView_textSize) {
                 // 默认设置为16sp
 
                 float textSize = a.getFloat(attr, LEFT_TEXT_SIZE);
                 mTvLeftText.setTextSize(textSize);
-            } else if (attr == R.styleable.LSettingView_textColor) {
+            } else if (attr == R.styleable.SettingView_textColor) {
                 //文字默认灰色
                 mTextColor = a.getColor(attr, Color.LTGRAY);
                 mTvLeftText.setTextColor(mTextColor);
-            } else if (attr == R.styleable.LSettingView_rightStyle) {
+            } else if (attr == R.styleable.SettingView_rightStyle) {
                 mRightStyle = a.getInt(attr, 0);
-            } else if (attr == R.styleable.LSettingView_isShowUnderLine) {
+            } else if (attr == R.styleable.SettingView_isShowUnderLine) {
                 //默认显示分割线
                 if (!a.getBoolean(attr, true)) {
                     mUnderLine.setVisibility(View.GONE);
                 }
-            } else if (attr == R.styleable.LSettingView_isShowRightText) {
+            } else if (attr == R.styleable.SettingView_isShowRightText) {
                 //默认不显示右侧文字
                 if (a.getBoolean(attr, false)) {
                     mTvRightText.setVisibility(View.VISIBLE);
                 }
-            } else if (attr == R.styleable.LSettingView_rightText) {
+            } else if (attr == R.styleable.SettingView_rightText) {
                 mTvRightText.setText(a.getString(attr));
-            } else if (attr == R.styleable.LSettingView_rightTextSize) {
+            } else if (attr == R.styleable.SettingView_rightTextSize) {
 
                 mRightTextSize = (int) a.getDimension(attr, RIGHT_TEXT_SIZE);
                 mTvRightText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mRightTextSize);
-            } else if (attr == R.styleable.LSettingView_rightTextColor) {
+            } else if (attr == R.styleable.SettingView_rightTextColor) {
                 //文字默认灰色
                 mRightTextColor = a.getColor(attr, Color.GRAY);
                 mTvRightText.setTextColor(mRightTextColor);

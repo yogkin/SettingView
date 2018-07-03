@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LSettingView">
+    <declare-styleable name="SettingView">
         <attr name="leftText" format="string"/>
         <attr name="leftIcon" format="integer"/>
         <attr name="rightIcon" format="integer"/>

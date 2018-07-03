@@ -34,7 +34,7 @@
                 android:text="朱小明"
                 android:textSize="16sp"/>
         </LinearLayout>
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
             android:id="@+id/item_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -7,30 +7,30 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import com.czm.settingview.SettingItem;
+import com.czm.settingview.SettingView;
 import com.squareup.picasso.Picasso;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private SettingItem mSettingItemOne;
-    private SettingItem mSettingItemFour;
+    private SettingView mSettingItemOne;
+    private SettingView mSettingItemFour;
     private ImageView mIvHead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mSettingItemOne = (SettingItem) findViewById(R.id.item_one);
-        mSettingItemFour = (SettingItem) findViewById(R.id.item_four);
+        mSettingItemOne = (SettingView) findViewById(R.id.item_one);
+        mSettingItemFour = (SettingView) findViewById(R.id.item_four);
         mIvHead = (ImageView) findViewById(R.id.headimage);
 
-        mSettingItemOne.setmOnLSettingItemClick(new SettingItem.OnLSettingItemClick() {
+        mSettingItemOne.setmOnLSettingItemClick(new SettingView.OnLSettingItemClick() {
             @Override
             public void click(boolean isChecked) {
                 Toast.makeText(getApplicationContext(), "我的消息", Toast.LENGTH_SHORT).show();
             }
         });
-        mSettingItemFour.setmOnLSettingItemClick(new SettingItem.OnLSettingItemClick() {
+        mSettingItemFour.setmOnLSettingItemClick(new SettingView.OnLSettingItemClick() {
             @Override
             public void click(boolean isChecked) {
                 Toast.makeText(getApplicationContext(), "选中开关：" + isChecked, Toast.LENGTH_SHORT).show();
