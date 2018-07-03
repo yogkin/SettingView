@@ -60,6 +60,17 @@ public class SettingItem extends RelativeLayout {
     /*点击事件*/
     private OnLSettingItemClick mOnLSettingItemClick;
 
+    /*左侧字体大小*/
+    private static final int LEFT_CION_SIZE  = 16;
+
+    /*左侧距离大小*/
+    private static final int MARGIN_LEFT = 8;
+    /*左侧文字大小*/
+    private static final int LEFT_TEXT_SIZE = 16;
+    /*右侧文字大小*/
+    private static final int RIGHT_TEXT_SIZE = 20;
+
+
     public SettingItem(Context context) {
         this(context, null);
     }
@@ -109,15 +120,20 @@ public class SettingItem extends RelativeLayout {
             } else if (attr == R.styleable.LSettingView_leftIcon) {
                 // 左侧图标
                 mLeftIcon = a.getDrawable(attr);
-                mIvLeftIcon.setImageDrawable(mLeftIcon);
+                if (mLeftIcon!=null) {
+                    mIvLeftIcon.setVisibility(VISIBLE);
+                    mIvLeftIcon.setImageDrawable(mLeftIcon);
+                }
             } else if (attr == R.styleable.LSettingView_leftIconSize) {
-                mLeftIconSzie = (int) a.getDimension(attr, 16);
+
+                mLeftIconSzie = (int) a.getDimension(attr, LEFT_CION_SIZE);
                 RelativeLayout.LayoutParams layoutParams = (LayoutParams) mIvLeftIcon.getLayoutParams();
                 layoutParams.width = mLeftIconSzie;
                 layoutParams.height = mLeftIconSzie;
                 mIvLeftIcon.setLayoutParams(layoutParams);
             } else if (attr == R.styleable.LSettingView_leftTextMarginLeft) {
-                int leftMargin = (int) a.getDimension(attr, 8);
+
+                int leftMargin = (int) a.getDimension(attr, MARGIN_LEFT);
                 RelativeLayout.LayoutParams layoutParams = (LayoutParams) mTvLeftText.getLayoutParams();
                 layoutParams.leftMargin = leftMargin;
                 mTvLeftText.setLayoutParams(layoutParams);
@@ -127,7 +143,8 @@ public class SettingItem extends RelativeLayout {
                 mIvRightIcon.setImageDrawable(mRightIcon);
             } else if (attr == R.styleable.LSettingView_textSize) {
                 // 默认设置为16sp
-                float textSize = a.getFloat(attr, 16);
+
+                float textSize = a.getFloat(attr, LEFT_TEXT_SIZE);
                 mTvLeftText.setTextSize(textSize);
             } else if (attr == R.styleable.LSettingView_textColor) {
                 //文字默认灰色
@@ -148,7 +165,8 @@ public class SettingItem extends RelativeLayout {
             } else if (attr == R.styleable.LSettingView_rightText) {
                 mTvRightText.setText(a.getString(attr));
             } else if (attr == R.styleable.LSettingView_rightTextSize) {
-                mRightTextSize = (int) a.getDimension(attr, 20);
+
+                mRightTextSize = (int) a.getDimension(attr, RIGHT_TEXT_SIZE);
                 mTvRightText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mRightTextSize);
             } else if (attr == R.styleable.LSettingView_rightTextColor) {
                 //文字默认灰色
@@ -254,6 +272,10 @@ public class SettingItem extends RelativeLayout {
 
     public interface OnLSettingItemClick {
         public void click(boolean isChecked);
+    }
+
+    public void setIsShowRightIcon(boolean isShowLeftIcon){
+        mLeftIcon.setVisible(isShowLeftIcon,false);
     }
 }
 

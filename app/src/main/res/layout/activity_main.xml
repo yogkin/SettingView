@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -8,82 +8,81 @@
     >
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginBottom="16dp"
-        android:background="#fff"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/headimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="16dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
+            <ImageView
+                android:id="@+id/headimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="朱小明"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <com.czm.settingview.SettingItem
+            android:id="@+id/item_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="朱小明"
-            android:textSize="16sp"/>
+            app:isShowRightText="true"
+            app:leftIconSize="26dp"
+            app:leftText="我的消息"
+            app:rightText="99+"
+            app:rightTextColor="@color/gray"
+            />
+        <com.czm.settingview.SettingItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isShowRightText="true"
+            app:leftText="我的下载"
+            app:rightText="V1.0.0"
+            app:rightStyle="iconHide"
+            app:rightTextColor="@color/colorPrimary"
+            />
+        <com.czm.settingview.SettingItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftIcon="@drawable/credit_card"
+            app:leftText="我的卡片"
+            app:rightStyle="iconHide"/>
+        <com.czm.settingview.SettingItem
+            android:id="@+id/item_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyCheckBox"
+            app:leftIcon="@drawable/ic_action_action_add_shopping_cart"
+            app:leftText="我的购物车"
+            app:rightStyle="iconCheck"/>
+        <com.czm.settingview.SettingItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyCheckBox"
+            app:isShowUnderLine="false"
+            app:leftIcon="@drawable/ic_action_communication_location_on"
+            app:leftText="我的位置"
+            app:rightStyle="iconSwitch"/>
+        <com.czm.settingview.SettingItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:isShowUnderLine="false"
+            app:leftText="不显示分割线"
+            app:rightStyle="iconSwitch"/>
+
     </LinearLayout>
 
-
-    <com.czm.settingview.SettingItem
-        android:id="@+id/item_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isShowRightText="true"
-        app:leftIcon="@drawable/message"
-        app:leftIconSize="36dp"
-        app:leftText="我的消息"
-        app:leftTextMarginLeft="30dp"
-        app:rightText="99+"
-        app:rightTextColor="@color/gray"
-        app:rightTextSize="14sp"/>
-
-    <com.czm.settingview.SettingItem
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isShowRightText="true"
-        app:leftIcon="@drawable/download"
-        app:leftText="我的下载"
-        app:rightText="V1.0.0"
-        app:rightTextColor="@color/colorPrimary"
-        app:textSize="20"/>
-
-    <com.czm.settingview.SettingItem
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:leftIcon="@drawable/credit_card"
-        app:leftText="我的卡片"
-        app:rightStyle="iconHide"/>
-
-    <com.czm.settingview.SettingItem
-        android:id="@+id/item_four"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/MyCheckBox"
-        app:leftIcon="@drawable/ic_action_action_add_shopping_cart"
-        app:leftText="我的购物车"
-        app:rightStyle="iconCheck"/>
-
-    <com.czm.settingview.SettingItem
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/MyCheckBox"
-        app:isShowUnderLine="false"
-        app:leftIcon="@drawable/ic_action_communication_location_on"
-        app:leftText="我的位置"
-        app:rightStyle="iconSwitch"/>
-
-    <com.czm.settingview.SettingItem
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:isShowUnderLine="false"
-        app:leftText="不显示分割线"
-        app:rightStyle="iconSwitch"/>
-</LinearLayout>
+</ScrollView>

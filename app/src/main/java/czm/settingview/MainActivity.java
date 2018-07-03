@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.czm.settingview.SettingItem;
 import com.squareup.picasso.Picasso;
 
-import czm.settingview.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private SettingItem mSettingItemOne;
@@ -38,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         mSettingItemOne.setRightText("我是右侧改变的文字");
-        Picasso.with(this).load(R.drawable.girl).transform(new CircleTransform()).into(mIvHead);
+
+        Picasso.get().load(R.drawable.girl).transform(new CircleTransform()).into(mIvHead);
     }
 
     @Override
