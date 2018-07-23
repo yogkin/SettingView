@@ -23,5 +23,6 @@
         <attr name="rightEdittextHint" format="string"/>
         <attr name="rightTextSize" format="dimension"/>
         <attr name="rightTextColor" format="color"/>
+        <attr name="underLineColor" format="color"/>
     </declare-styleable>
 </resources>

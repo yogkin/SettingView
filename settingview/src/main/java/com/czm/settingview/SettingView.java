@@ -71,8 +71,10 @@ public class SettingView extends RelativeLayout {
     /*右侧文字大小*/
     private static final int RIGHT_TEXT_SIZE = 20;
 
+    /*右侧edittext*/
     private EditText mEtRightEditText;
 
+    private int mUnderLineColor=Color.parseColor("#E9E9E9");
 
     public SettingView(Context context) {
         this(context, null);
@@ -184,6 +186,10 @@ public class SettingView extends RelativeLayout {
                 //文字默认灰色
                 mRightTextColor = a.getColor(attr, Color.GRAY);
                 mTvRightText.setTextColor(mRightTextColor);
+            } else if (attr == R.styleable.SettingView_underLineColor) {
+                //文字默认灰色
+                mUnderLineColor = a.getColor(attr, mUnderLineColor);
+                mUnderLine.setBackgroundColor(mUnderLineColor);
             }
         }
         a.recycle();
