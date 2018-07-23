@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -69,6 +70,8 @@ public class SettingView extends RelativeLayout {
     private static final int LEFT_TEXT_SIZE = 16;
     /*右侧文字大小*/
     private static final int RIGHT_TEXT_SIZE = 20;
+
+    private EditText mEtRightEditText;
 
 
     public SettingView(Context context) {
@@ -162,8 +165,17 @@ public class SettingView extends RelativeLayout {
                 if (a.getBoolean(attr, false)) {
                     mTvRightText.setVisibility(View.VISIBLE);
                 }
+            } else if (attr == R.styleable.SettingView_isShowRightEdittext) {
+                //默认不显示右侧文字
+                if (a.getBoolean(attr, false)) {
+                    mEtRightEditText.setVisibility(View.VISIBLE);
+                }
             } else if (attr == R.styleable.SettingView_rightText) {
                 mTvRightText.setText(a.getString(attr));
+            } else if (attr == R.styleable.SettingView_rightEdittext) {
+                mEtRightEditText.setText(a.getString(attr));
+            } else if (attr == R.styleable.SettingView_rightEdittextHint) {
+                mEtRightEditText.setHint(a.getString(attr));
             } else if (attr == R.styleable.SettingView_rightTextSize) {
 
                 mRightTextSize = (int) a.getDimension(attr, RIGHT_TEXT_SIZE);
@@ -215,6 +227,7 @@ public class SettingView extends RelativeLayout {
         mUnderLine = (View) mView.findViewById(R.id.underline);
         mTvLeftText = (TextView) mView.findViewById(R.id.tv_lefttext);
         mTvRightText = (TextView) mView.findViewById(R.id.tv_righttext);
+        mEtRightEditText = (EditText) mView.findViewById(R.id.tv_rightedittext);
         mIvLeftIcon = (ImageView) mView.findViewById(R.id.iv_lefticon);
         mIvRightIcon = (ImageView) mView.findViewById(R.id.iv_righticon);
         mRightLayout = (FrameLayout) mView.findViewById(R.id.rightlayout);
@@ -276,6 +289,10 @@ public class SettingView extends RelativeLayout {
 
     public void setIsShowRightIcon(boolean isShowLeftIcon){
         mLeftIcon.setVisible(isShowLeftIcon,false);
+    }
+
+    public String getRightEdittextStr(){
+        return mEtRightEditText.getText().toString().trim();
     }
 }
 

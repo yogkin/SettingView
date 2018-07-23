@@ -17,7 +17,10 @@
             <enum name="iconSwitch" value="3"/>
         </attr>
         <attr name="isShowRightText" format="boolean"/>
+        <attr name="isShowRightEdittext" format="boolean"/>
         <attr name="rightText" format="string"/>
+        <attr name="rightEdittext" format="string"/>
+        <attr name="rightEdittextHint" format="string"/>
         <attr name="rightTextSize" format="dimension"/>
         <attr name="rightTextColor" format="color"/>
     </declare-styleable>

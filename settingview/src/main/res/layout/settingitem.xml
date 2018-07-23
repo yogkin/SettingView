@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rootLayout"
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:background="@drawable/bg"
-                android:clickable="true"
-                android:gravity="center_vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:background="@drawable/bg"
+    android:clickable="true"
+    android:gravity="center_vertical">
 
     <ImageView
         android:visibility="gone"
@@ -62,6 +63,20 @@
         android:visibility="gone"
         android:gravity="center"
         android:text="1.0.0"/>
+
+    <EditText
+        android:background="@null"
+        android:id="@+id/tv_rightedittext"
+        android:layout_width="180dp"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:gravity="right|center_vertical"
+        />
 
     <View
         android:id="@+id/underline"

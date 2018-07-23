@@ -11,10 +11,11 @@ import com.czm.settingview.SettingView;
 import com.squareup.picasso.Picasso;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private SettingView mSettingItemOne;
     private SettingView mSettingItemFour;
     private ImageView mIvHead;
+    private SettingView mSettingItemTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mSettingItemOne = (SettingView) findViewById(R.id.item_one);
         mSettingItemFour = (SettingView) findViewById(R.id.item_four);
+        mSettingItemTwo = (SettingView) findViewById(R.id.item_two);
         mIvHead = (ImageView) findViewById(R.id.headimage);
 
         mSettingItemOne.setmOnLSettingItemClick(new SettingView.OnLSettingItemClick() {
             @Override
             public void click(boolean isChecked) {
-                Toast.makeText(getApplicationContext(), "我的消息", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), mSettingItemTwo.getRightEdittextStr(), Toast.LENGTH_SHORT).show();
             }
         });
         mSettingItemFour.setmOnLSettingItemClick(new SettingView.OnLSettingItemClick() {
@@ -41,12 +43,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Picasso.get().load(R.drawable.girl).transform(new CircleTransform()).into(mIvHead);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.item_one:
-                Toast.makeText(getApplicationContext(), "我的消息", Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
+
 }

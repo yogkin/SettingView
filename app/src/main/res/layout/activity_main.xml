@@ -44,22 +44,23 @@
             app:rightText="99+"
             app:rightTextColor="@color/gray"
             />
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
+            android:id="@+id/item_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:isShowRightText="true"
+            app:isShowRightEdittext="true"
             app:leftText="我的下载"
-            app:rightText="V1.0.0"
+            app:rightEdittextHint="hahah"
             app:rightStyle="iconHide"
             app:rightTextColor="@color/colorPrimary"
             />
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:leftIcon="@drawable/credit_card"
             app:leftText="我的卡片"
             app:rightStyle="iconHide"/>
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
             android:id="@+id/item_four"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +68,7 @@
             app:leftIcon="@drawable/ic_action_action_add_shopping_cart"
             app:leftText="我的购物车"
             app:rightStyle="iconCheck"/>
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/MyCheckBox"
@@ -75,7 +76,7 @@
             app:leftIcon="@drawable/ic_action_communication_location_on"
             app:leftText="我的位置"
             app:rightStyle="iconSwitch"/>
-        <com.czm.settingview.SettingItem
+        <com.czm.settingview.SettingView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
