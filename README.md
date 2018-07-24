@@ -30,7 +30,7 @@
 ### 快速使用
 #### 1. 添加依赖
 
-    compile 'com.app:lsettingviewlibrary:1.4.0'
+    implementation 'com.github.yogkin:SettingView:1.0.5'
     
 #### 2. 在布局文件中引用
 
