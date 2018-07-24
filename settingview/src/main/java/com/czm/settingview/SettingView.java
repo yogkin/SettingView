@@ -151,6 +151,7 @@ public class SettingView extends RelativeLayout {
 
                 float textSize = a.getFloat(attr, LEFT_TEXT_SIZE);
                 mTvLeftText.setTextSize(textSize);
+                mEtRightEditText.setTextSize(textSize);
             } else if (attr == R.styleable.SettingView_textColor) {
                 //文字默认灰色
                 mTextColor = a.getColor(attr, Color.LTGRAY);
