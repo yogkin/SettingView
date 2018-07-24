@@ -62,7 +62,7 @@
         android:layout_toLeftOf="@id/rightlayout"
         android:visibility="gone"
         android:gravity="center"
-        android:text="1.0.0"/>
+        />
 
     <EditText
         android:background="@null"
