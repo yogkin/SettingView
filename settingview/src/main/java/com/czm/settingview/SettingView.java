@@ -149,7 +149,7 @@ public class SettingView extends RelativeLayout {
             } else if (attr == R.styleable.SettingView_textSize) {
                 // 默认设置为16sp
 
-                float textSize = a.getFloat(attr, LEFT_TEXT_SIZE);
+                float textSize = a.getDimension(attr, LEFT_TEXT_SIZE);
                 mTvLeftText.setTextSize(textSize);
                 mEtRightEditText.setTextSize(textSize);
             } else if (attr == R.styleable.SettingView_textColor) {

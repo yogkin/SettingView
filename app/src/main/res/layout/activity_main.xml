@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             app:isShowRightText="true"
             app:leftIconSize="26dp"
+
             app:leftText="我的消息"
             app:rightText="99+"
             app:rightTextColor="@color/gray"
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             app:isShowRightEdittext="true"
             app:leftText="我的下载"
+            app:textSize="14"
             app:rightEdittextHint="hahah"
             app:rightStyle="iconHide"
             app:rightTextColor="@color/colorPrimary"
